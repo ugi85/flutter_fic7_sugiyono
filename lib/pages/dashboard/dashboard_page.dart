@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_fic7_app/data/datasources/auth_local_datasource.dart';
 
 import '../../utils/images.dart';
 
@@ -18,17 +17,18 @@ class _HomePageState extends State<DashboardPage> {
 
   bool singleVendor = false;
 
-  String token = '';
+  /// untuk tes Token
+  // String token = '';
 
   @override
   void initState() {
     super.initState();
-
-    AuthLocalDatasource().getToken().then((value) {
-      setState(() {
-        token = value;
-      });
-    });
+    // untuk uji token
+    // AuthLocalDatasource().getToken().then((value) {
+    //   setState(() {
+    //     token = value;
+    //   });
+    // });
 
     _screens = [
       const Center(
@@ -50,7 +50,8 @@ class _HomePageState extends State<DashboardPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(token)),
+      //untuk menampilkan token
+      // appBar: AppBar(title: Text(token)),
       key: _scaffoldKey,
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Theme.of(context).primaryColor,

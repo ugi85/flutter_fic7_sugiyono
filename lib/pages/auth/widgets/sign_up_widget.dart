@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_fic7_app/data/datasources/auth_local_datasource.dart';
-import 'package:flutter_fic7_app/pages/dashboard/dashboard_page.dart';
+import 'package:flutter_fic7_sugiyono/data/datasources/auth_local_datasource.dart';
+import 'package:flutter_fic7_sugiyono/pages/dashboard/dashboard_page.dart';
 
 import '../../../bloc/register/register_bloc.dart';
 import '../../../data/models/request/register_request_model.dart';

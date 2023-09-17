@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter_fic7_app/common/global_variables.dart';
-import 'package:flutter_fic7_app/data/models/auth_response_model.dart';
-import 'package:flutter_fic7_app/data/models/request/register_request_model.dart';
+import 'package:flutter_fic7_sugiyono/common/global_variables.dart';
+import 'package:flutter_fic7_sugiyono/data/models/auth_response_model.dart';
+import 'package:flutter_fic7_sugiyono/data/models/request/register_request_model.dart';
 import 'package:http/http.dart' as http;
 
 class AuthRemoteDatasource {

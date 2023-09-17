@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_fic7_app/bloc/register/register_bloc.dart';
-import 'package:flutter_fic7_app/pages/auth/auth_page.dart';
-import 'package:flutter_fic7_app/utils/light_themes.dart';
+import 'package:flutter_fic7_sugiyono/bloc/register/register_bloc.dart';
+import 'package:flutter_fic7_sugiyono/pages/auth/auth_page.dart';
+import 'package:flutter_fic7_sugiyono/utils/light_themes.dart';
 
 void main() {
   runApp(const MyApp());

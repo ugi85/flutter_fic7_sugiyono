@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../data/datasources/auth_local_datasource.dart';
 import '../../utils/images.dart';
 
 class DashboardPage extends StatefulWidget {
@@ -18,17 +19,17 @@ class _HomePageState extends State<DashboardPage> {
   bool singleVendor = false;
 
   /// untuk tes Token
-  // String token = '';
+  String token = '';
 
   @override
   void initState() {
     super.initState();
     // untuk uji token
-    // AuthLocalDatasource().getToken().then((value) {
-    //   setState(() {
-    //     token = value;
-    //   });
-    // });
+    AuthLocalDatasource().getToken().then((value) {
+      setState(() {
+        token = value;
+      });
+    });
 
     _screens = [
       const Center(
@@ -51,7 +52,7 @@ class _HomePageState extends State<DashboardPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       //untuk menampilkan token
-      // appBar: AppBar(title: Text(token)),
+      appBar: AppBar(title: Text(token)),
       key: _scaffoldKey,
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Theme.of(context).primaryColor,

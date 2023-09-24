@@ -19,19 +19,19 @@ mixin _$LogoutEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(LoginRequestModel model) logout,
+    required TResult Function() logout,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(LoginRequestModel model)? logout,
+    TResult? Function()? logout,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(LoginRequestModel model)? logout,
+    TResult Function()? logout,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -112,7 +112,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(LoginRequestModel model) logout,
+    required TResult Function() logout,
   }) {
     return started();
   }
@@ -121,7 +121,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(LoginRequestModel model)? logout,
+    TResult? Function()? logout,
   }) {
     return started?.call();
   }
@@ -130,7 +130,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(LoginRequestModel model)? logout,
+    TResult Function()? logout,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -179,8 +179,6 @@ abstract class _Started implements LogoutEvent {
 abstract class _$$_LogoutCopyWith<$Res> {
   factory _$$_LogoutCopyWith(_$_Logout value, $Res Function(_$_Logout) then) =
       __$$_LogoutCopyWithImpl<$Res>;
-  @useResult
-  $Res call({LoginRequestModel model});
 }
 
 /// @nodoc
@@ -189,78 +187,54 @@ class __$$_LogoutCopyWithImpl<$Res>
     implements _$$_LogoutCopyWith<$Res> {
   __$$_LogoutCopyWithImpl(_$_Logout _value, $Res Function(_$_Logout) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? model = null,
-  }) {
-    return _then(_$_Logout(
-      null == model
-          ? _value.model
-          : model // ignore: cast_nullable_to_non_nullable
-              as LoginRequestModel,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$_Logout implements _Logout {
-  const _$_Logout(this.model);
-
-  @override
-  final LoginRequestModel model;
+  const _$_Logout();
 
   @override
   String toString() {
-    return 'LogoutEvent.logout(model: $model)';
+    return 'LogoutEvent.logout()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_Logout &&
-            (identical(other.model, model) || other.model == model));
+        (other.runtimeType == runtimeType && other is _$_Logout);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, model);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_LogoutCopyWith<_$_Logout> get copyWith =>
-      __$$_LogoutCopyWithImpl<_$_Logout>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(LoginRequestModel model) logout,
+    required TResult Function() logout,
   }) {
-    return logout(model);
+    return logout();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(LoginRequestModel model)? logout,
+    TResult? Function()? logout,
   }) {
-    return logout?.call(model);
+    return logout?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(LoginRequestModel model)? logout,
+    TResult Function()? logout,
     required TResult orElse(),
   }) {
     if (logout != null) {
-      return logout(model);
+      return logout();
     }
     return orElse();
   }
@@ -298,12 +272,7 @@ class _$_Logout implements _Logout {
 }
 
 abstract class _Logout implements LogoutEvent {
-  const factory _Logout(final LoginRequestModel model) = _$_Logout;
-
-  LoginRequestModel get model;
-  @JsonKey(ignore: true)
-  _$$_LogoutCopyWith<_$_Logout> get copyWith =>
-      throw _privateConstructorUsedError;
+  const factory _Logout() = _$_Logout;
 }
 
 /// @nodoc

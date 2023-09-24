@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_fic7_sugiyono/pages/auth/auth_page.dart';
 
+import '../../bloc/logout/logout_bloc.dart';
 import '../../data/datasources/auth_local_datasource.dart';
 import '../../utils/images.dart';
 
@@ -42,8 +45,42 @@ class _HomePageState extends State<DashboardPage> {
       const Center(
         child: Text('Order'),
       ),
-      const Center(
-        child: Text('More'),
+      Center(
+        child: BlocConsumer<LogoutBloc, LogoutState>(
+          listener: (context, state) {
+            state.maybeWhen(
+                orElse: () {},
+                loaded: (message) {
+                  AuthLocalDatasource().removeAuthData();
+                  Navigator.pushAndRemoveUntil(context,
+                      MaterialPageRoute(builder: (context) {
+                    return const AuthPage();
+                  }), (route) => false);
+                },
+                error: ((message) {
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    content: Text(message),
+                    backgroundColor: Colors.red,
+                  ));
+                }));
+          },
+          builder: (context, state) {
+            return state.maybeWhen(
+                orElse: () {
+                  return ElevatedButton(
+                    onPressed: () {
+                      context
+                          .read<LogoutBloc>()
+                          .add(const LogoutEvent.logout());
+                    },
+                    child: const Text('Logout'),
+                  );
+                },
+                loading: () => const Center(
+                      child: CircularProgressIndicator(),
+                    ));
+          },
+        ),
       ),
     ];
   }

@@ -3,7 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_fic7_sugiyono/bloc/login/login_bloc.dart';
 import 'package:flutter_fic7_sugiyono/bloc/logout/logout_bloc.dart';
 import 'package:flutter_fic7_sugiyono/bloc/register/register_bloc.dart';
+import 'package:flutter_fic7_sugiyono/data/datasources/auth_local_datasource.dart';
 import 'package:flutter_fic7_sugiyono/pages/auth/auth_page.dart';
+import 'package:flutter_fic7_sugiyono/pages/dashboard/dashboard_page.dart';
 import 'package:flutter_fic7_sugiyono/utils/light_themes.dart';
 
 void main() {
@@ -30,7 +32,22 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: light,
-        home: const AuthPage(),
+        home: FutureBuilder<bool>(
+          future: AuthLocalDatasource().isLogin(),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return const Scaffold(
+                body: Center(
+                  child: CircularProgressIndicator(),
+                ),
+              );
+            } else if (snapshot.hasData && snapshot.data!) {
+              return const DashboardPage();
+            } else {
+              return const AuthPage();
+            }
+          },
+        ),
       ),
     );
   }

@@ -36,7 +36,7 @@ class _HomePageState extends State<DashboardPage> {
     });
 
     _screens = [
-      HomePage(),
+      const HomePage(),
       const Center(
         child: Text('Order'),
       ),

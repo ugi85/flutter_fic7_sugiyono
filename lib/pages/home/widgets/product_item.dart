@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_fic7_sugiyono/data/models/products_response_model.dart';
 
 import '../../../utils/color_resources.dart';
 import '../../../utils/custom_themes.dart';
@@ -7,7 +8,11 @@ import '../../../utils/images.dart';
 import '../../base_widgets/rating_bar.dart';
 
 class ProductItemWidget extends StatelessWidget {
-  const ProductItemWidget({super.key});
+  final Product product;
+  const ProductItemWidget({
+    Key? key,
+    required this.product,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +54,7 @@ class ProductItemWidget extends StatelessWidget {
                   placeholder: Images.placeholder,
                   fit: BoxFit.cover,
                   height: MediaQuery.of(context).size.width / 2.45,
-                  image: 'https://picsum.photos/250',
+                  image: product.imageProduct!,
                   imageErrorBuilder: (c, o, s) => Image.asset(
                       Images.placeholder,
                       fit: BoxFit.cover,
@@ -70,7 +75,7 @@ class ProductItemWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('Jam Tangan Mewah',
+                    Text(product.name ?? '-',
                         textAlign: TextAlign.center,
                         style: robotoRegular.copyWith(
                             fontSize: Dimensions.fontSizeSmall,
@@ -94,7 +99,7 @@ class ProductItemWidget extends StatelessWidget {
                       height: 2,
                     ),
                     Text(
-                      'Rp 2.000.000',
+                      '${product.price}',
                       style: titilliumSemiBold.copyWith(
                           color: ColorResources.getPrimary(context)),
                     ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_fic7_sugiyono/pages/auth/auth_page.dart';
+import 'package:flutter_fic7_sugiyono/pages/home/home_page.dart';
 
 import '../../bloc/logout/logout_bloc.dart';
 import '../../data/datasources/auth_local_datasource.dart';
@@ -35,13 +36,7 @@ class _HomePageState extends State<DashboardPage> {
     });
 
     _screens = [
-      const Center(
-        child: Column(
-          children: [
-            Text('Home'),
-          ],
-        ),
-      ),
+      HomePage(),
       const Center(
         child: Text('Order'),
       ),
@@ -89,7 +84,7 @@ class _HomePageState extends State<DashboardPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       //untuk menampilkan token
-      appBar: AppBar(title: Text(token)),
+      // appBar: AppBar(title: Text(token)),
       key: _scaffoldKey,
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Theme.of(context).primaryColor,

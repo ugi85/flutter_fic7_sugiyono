@@ -6,6 +6,7 @@ import '../../../utils/custom_themes.dart';
 import '../../../utils/dimensions.dart';
 import '../../../utils/images.dart';
 import '../../base_widgets/rating_bar.dart';
+import '../../product/product_detail.dart';
 
 class ProductItemWidget extends StatelessWidget {
   final Product product;
@@ -18,9 +19,11 @@ class ProductItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        // Navigator.push(context, MaterialPageRoute(builder: (context) {
-        //   return const ProductDetail();
-        // }));
+        Navigator.push(context, MaterialPageRoute(builder: (context) {
+          return ProductDetail(
+            product: product,
+          );
+        }));
       },
       child: Container(
         height: Dimensions.cardHeight,
@@ -80,7 +83,7 @@ class ProductItemWidget extends StatelessWidget {
                         style: robotoRegular.copyWith(
                             fontSize: Dimensions.fontSizeSmall,
                             fontWeight: FontWeight.w400),
-                        maxLines: 2,
+                        maxLines: 1,
                         overflow: TextOverflow.ellipsis),
                     const SizedBox(height: Dimensions.paddingSizeExtraSmall),
                     Row(mainAxisAlignment: MainAxisAlignment.center, children: [

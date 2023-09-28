@@ -20,4 +20,22 @@ class ProductRemoteDatasource {
       return const Left('Server error, cek ulang');
     }
   }
+
+  Future<Either<String, ProductsResponseModel>> getProductsByCategory(
+      int categoryId) async {
+    final headers = {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    };
+    final response = await http.get(
+      Uri.parse(
+          '${GlobalVariables.baseUrl}/api/product?category_id=$categoryId'),
+      headers: headers,
+    );
+    if (response.statusCode == 200) {
+      return Right(ProductsResponseModel.fromJson(response.body));
+    } else {
+      return const Left('Server error, cek ulang');
+    }
+  }
 }

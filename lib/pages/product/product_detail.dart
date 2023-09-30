@@ -91,7 +91,9 @@ class _ProductDetailState extends State<ProductDetail> {
                   ],
                 )),
           ),
-          bottomNavigationBar: const BottomCartView()),
+          bottomNavigationBar: BottomCartView(
+            product: widget.product,
+          )),
     );
   }
 }

@@ -10,6 +10,8 @@ import 'package:flutter_fic7_sugiyono/pages/auth/auth_page.dart';
 import 'package:flutter_fic7_sugiyono/pages/dashboard/dashboard_page.dart';
 import 'package:flutter_fic7_sugiyono/utils/light_themes.dart';
 
+import 'bloc/checkout/checkout_bloc.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -35,6 +37,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => CategoriesBloc(),
+        ),
+        BlocProvider(
+          create: (context) => CheckoutBloc(),
         ),
       ],
       child: MaterialApp(

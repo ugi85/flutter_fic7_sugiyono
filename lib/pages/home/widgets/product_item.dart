@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_fic7_sugiyono/data/models/products_response_model.dart';
+import 'package:flutter_fic7_sugiyono/utils/price_ext.dart';
 
 import '../../../utils/color_resources.dart';
 import '../../../utils/custom_themes.dart';
@@ -102,7 +103,7 @@ class ProductItemWidget extends StatelessWidget {
                       height: 2,
                     ),
                     Text(
-                      '${product.price}',
+                      '${product.price}'.formatPrice(),
                       style: titilliumSemiBold.copyWith(
                           color: ColorResources.getPrimary(context)),
                     ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_fic7_sugiyono/utils/price_ext.dart';
 
 import '../../../data/models/products_response_model.dart';
 import '../../../utils/color_resources.dart';
@@ -34,7 +35,7 @@ class ProductTitleView extends StatelessWidget {
               Column(
                 children: [
                   Text(
-                    '${product.price}',
+                    '${product.price}'.formatPrice(),
                     style: titilliumBold.copyWith(
                         color: ColorResources.getPrimary(context),
                         fontSize: Dimensions.fontSizeLarge),

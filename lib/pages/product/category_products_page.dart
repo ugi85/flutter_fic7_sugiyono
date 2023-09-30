@@ -45,8 +45,8 @@ class _CategoryProductsPageState extends State<CategoryProductsPage> {
             builder: (context, state) {
               return state.maybeWhen(
                 orElse: () {
-                  return Center(
-                    child: const CircularProgressIndicator.adaptive(),
+                  return const Center(
+                    child: CircularProgressIndicator.adaptive(),
                   );
                 },
                 loaded: (model) {

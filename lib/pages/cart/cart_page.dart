@@ -7,12 +7,12 @@ import '../../bloc/checkout/checkout_bloc.dart';
 import '../../utils/custom_themes.dart';
 import '../../utils/dimensions.dart';
 import '../base_widgets/custom_app_bar.dart';
+import '../checkout/checkout_page.dart';
 
 class CartPage extends StatefulWidget {
-  final bool fromCheckout;
-  final int sellerId;
-  const CartPage({Key? key, this.fromCheckout = false, this.sellerId = 1})
-      : super(key: key);
+  const CartPage({
+    Key? key,
+  }) : super(key: key);
 
   @override
   CartPageState createState() => CartPageState();
@@ -78,9 +78,9 @@ class CartPageState extends State<CartPage> {
             Builder(
               builder: (context) => InkWell(
                 onTap: () {
-                  // Navigator.push(context, MaterialPageRoute(builder: (context){
-                  //   return const CheckoutPage();
-                  // }));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return const CheckoutPage();
+                  }));
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width / 3.5,

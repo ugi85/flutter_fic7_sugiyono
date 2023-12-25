@@ -59,4 +59,20 @@ class _PaymentPageState extends State<PaymentPage> {
       body: WebViewWidget(controller: _controller!),
     );
   }
+
+  // @override
+  // Widget build(BuildContext context) {
+  //   return Scaffold(
+  //     body: Column(
+  //       children: [
+  //         // Widget atau pesan tambahan di sini
+  //         const Text("Selamat Datang di Halaman Pembayaran"),
+  //         WebViewWidget(controller: _controller!),
+
+  //         // Widget atau pesan tambahan di bawah WebView
+  //         const Text("Harap tunggu sebentar..."),
+  //       ],
+  //     ),
+  //   );
+  // }
 }

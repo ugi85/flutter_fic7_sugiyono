@@ -1,3 +1,3 @@
 class GlobalVariables {
-  static const baseUrl = 'https://28ff-182-0-98-249.ngrok.io';
+  static const baseUrl = 'https://ae29-114-124-241-136.ngrok-free.app';
 }

@@ -37,11 +37,9 @@ class _CheckoutPageState extends State<CheckoutPage> {
           items = products
               .map((e) => Item(id: e.product.id!, quantity: e.quantity))
               .toList();
-          products.forEach(
-            (element) {
+          for (var element in products) {
               subPrice += element.quantity * element.product.price!;
-            },
-          );
+            }
           totalPrice = subPrice + shippingCost;
           return ListView(physics: const BouncingScrollPhysics(), children: [
             const SizedBox(

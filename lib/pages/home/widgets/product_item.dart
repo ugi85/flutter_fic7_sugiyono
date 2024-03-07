@@ -28,7 +28,7 @@ class ProductItemWidget extends StatelessWidget {
       },
       child: Container(
         height: Dimensions.cardHeight,
-        margin: const EdgeInsets.all(5),
+        margin: const EdgeInsets.all(2),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           color: Theme.of(context).highlightColor,

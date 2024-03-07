@@ -37,7 +37,7 @@ class _AuthPageState extends State<AuthPage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const SizedBox(height: Dimensions.topSpace),
-                Image.asset(Images.logoWithNameImage, height: 150, width: 200),
+                Image.asset(Images.logoWithNameImage, height: 190, width: 450),
                 Padding(
                   padding: const EdgeInsets.all(Dimensions.marginSizeLarge),
                   child: Stack(

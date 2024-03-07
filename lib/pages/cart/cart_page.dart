@@ -59,12 +59,10 @@ class CartPageState extends State<CartPage> {
                       },
                       loaded: (products) {
                         int totalPrice = 0;
-                        products.forEach(
-                          (element) {
+                        for (var element in products) {
                             totalPrice +=
                                 element.quantity * element.product.price!;
-                          },
-                        );
+                          }
                         return Text(
                           '$totalPrice'.formatPrice(),
                           style: titilliumSemiBold.copyWith(

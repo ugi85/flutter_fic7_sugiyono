@@ -8,7 +8,7 @@ part 'categories_event.dart';
 part 'categories_state.dart';
 
 class CategoriesBloc extends Bloc<CategoriesEvent, CategoriesState> {
-  CategoriesBloc() : super(_Initial()) {
+  CategoriesBloc() : super(const _Initial()) {
     on<CategoriesEvent>((event, emit) async {
       emit(const _Loading());
       final result = await CategoryRemoteDatasource().getCategories();

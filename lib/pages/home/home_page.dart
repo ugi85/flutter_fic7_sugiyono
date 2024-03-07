@@ -24,6 +24,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final ScrollController _scrollController = ScrollController();
 
+  // ignore: unused_element
   Future<void> _loadData(bool reload) async {}
 
   void passData(int index, String title) {
@@ -92,11 +93,9 @@ class _HomePageState extends State<HomePage> {
                                   },
                                   loaded: (products) {
                                     int totalQty = 0;
-                                    products.forEach(
-                                      (element) {
-                                        totalQty += element.quantity;
-                                      },
-                                    );
+                                    for (var element in products) {
+                                      totalQty += element.quantity;
+                                    }
                                     return Text(
                                       '$totalQty',
                                       style: titilliumSemiBold.copyWith(
